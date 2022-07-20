@@ -6,11 +6,8 @@ presubmits:
     containers:
     - image: quay.io/kubermatic/yamllint:0.1
       command:
-      - yamllint
-      - -c
-      - config/jobs/.yamllint.conf
-      - config/jobs
-      - config/prow/cluster
+      - echo
+      - "it works"
 
 postsubmits:
 - name: push-test-infra-yamllint
@@ -20,8 +17,5 @@ postsubmits:
     containers:
     - image: quay.io/kubermatic/yamllint:0.1
       command:
-      - yamllint
-      - -c
-      - config/jobs/.yamllint.conf
-      - config/jobs
-      - config/prow/cluster
+      - echo
+      - "it works"
