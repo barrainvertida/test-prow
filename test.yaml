@@ -2,7 +2,7 @@ tests:
 - as: verify
   steps:
     test:
-      from: docker.io/library/busybox
+    - from: docker.io/library/busybox
       commands: |
         echo "it works!"
       resources:
