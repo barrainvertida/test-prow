@@ -1,12 +1,9 @@
 tests:
-- as: deploy-pulp-on-openshift
-  steps:
-    allow_skip_on_success: true
-    test:
-    - as: deploy-pulp
-      commands: |
-        echo "it works"
-      resources:
-        requests:
-          cpu: 1000m
-          memory: 4Gi
+- as: verify
+  from: docker.io/library/busybox
+  commands: |
+    echo "it works!"
+  resources:
+    requests:
+      cpu: 1000m
+      memory: 100Mi
