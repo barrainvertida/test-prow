@@ -1,9 +1,11 @@
 tests:
 - as: verify
-  from: docker.io/library/busybox
-  commands: |
-    echo "it works!"
-  resources:
-    requests:
-      cpu: 1000m
-      memory: 100Mi
+  steps:
+    test:
+      from: docker.io/library/busybox
+      commands: |
+        echo "it works!"
+      resources:
+        requests:
+          cpu: 1000m
+          memory: 100Mi
