@@ -32,4 +32,4 @@ tests:
       from_image:
         namespace: openshift
         name: python
-        tag: 3.8
+        tag: "3.8"
