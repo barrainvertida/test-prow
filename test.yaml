@@ -20,15 +20,16 @@ resources:
 
 ## here the tests start
 tests:
-- steps:
+- as: foo
+  steps:
     test:
-    - as: new-test
-      commands: "print('it works')"
+    - as: bar
+      commands: print('it works')
       resources:
         requests:
           cpu: 100m
           memory: 200Mi
       from_image:
-        namespace: "openshift"
-        name: "python"
-        tag: "3.8"
+        namespace: openshift
+        name: python
+        tag: 3.8
