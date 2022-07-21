@@ -21,9 +21,11 @@ resources:
 ## here the tests start
 tests:
 - as: "test"
-  commands: "print('it works')"
-  container:
-    from:
-      namespace: "openshift"
-      name: "python"
-      tag: "3.8"
+  steps:
+  - as: "test"
+    commands: "print('it works')"
+    container:
+      from_image:
+        namespace: "openshift"
+        name: "python"
+        tag: "3.8"
