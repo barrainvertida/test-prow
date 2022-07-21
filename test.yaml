@@ -20,3 +20,7 @@ tests:
   container:
     from: "python"
     clone: false
+  credentials:
+  - namespace: test-credentials # this entry injects the custom credential
+    name: my-data
+    mount_path: /var/run/my-data
