@@ -22,8 +22,8 @@ resources:
 tests:
 - as: foo
   steps:
-    test:
-    - as: bar
+    ref:
+      as: bar
       commands: print('it works')
       resources:
         requests:
