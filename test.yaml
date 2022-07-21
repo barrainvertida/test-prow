@@ -4,9 +4,8 @@ tests:
     test:
     - as: "test1"
       from: "docker.io/library/busybox"
-      commands: |
-        "echo it works!"
+      commands: "echo it works!"
       resources:
         requests:
-          cpu: 1000m
+          cpu: 100m
           memory: 100Mi
