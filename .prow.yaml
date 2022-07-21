@@ -14,10 +14,6 @@ presubmits:
   always_run: true
   decorate: true
   name: pull-ci-pulp-pulp-operator-main-deploy-galaxy-on-openshift
-  credentials:
-  - namespace: test-credentials # this entry injects the custom credential
-    name: my-data
-    mount_path: /var/run/my-data
   spec:
     containers:
     - args:
