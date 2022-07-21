@@ -23,4 +23,7 @@ tests:
 - as: "test"
   commands: "print('it works')"
   container:
-    from: "openshift/python:3.8"
+    from:
+      namespace: "openshift"
+      name: "python"
+      tag: "3.8"
