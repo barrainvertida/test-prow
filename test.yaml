@@ -1,8 +1,19 @@
+## need to set the imagestream that will be used by the tests
 base_images:
   python:
     name: "python"
     namespace: "openshift"
     tag: "3.8"
+
+## not sure why, but if i didn't set this here but only
+## inside tests step it failed
+resources:
+  '*':
+    requests:
+      cpu: 100m
+      memory: 100Mi
+
+## here the tests start
 tests:
 - as: "test"
   commands: "print('it works')"
