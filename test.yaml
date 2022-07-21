@@ -22,9 +22,9 @@ resources:
 tests:
 - as: foo
   steps:
-    ref:
-      as: bar
-      commands: print('it works')
+    test:
+    - as: bar
+      commands: echo "hello world"
       resources:
         requests:
           cpu: 100m
