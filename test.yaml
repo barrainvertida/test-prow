@@ -1,10 +1,16 @@
+base_images:
+  python:
+    name: "python"
+    namespace: "openshift"
+    tag: "3.8"
 tests:
 - as: verify
   steps:
     test:
     - as: "test1"
-      from: "docker.io/library/busybox"
-      commands: "echo it works!"
+      from: python
+      commands: |
+        "print(it works!)"
       resources:
         requests:
           cpu: 100m
