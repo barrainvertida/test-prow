@@ -10,6 +10,22 @@ presubmits:
       - echo
       - "it works"
 
+- agent: kubernetes
+  always_run: true
+  decorate: true
+  name: pull-ci-pulp-pulp-operator-main-deploy-galaxy-on-openshift
+  spec:
+    containers:
+    - args: []
+      command:
+      - ci-operator
+      image: ci-operator:latest
+      imagePullPolicy: Always
+      name: ""
+      resources:
+        requests:
+          cpu: 10m
+
 postsubmits:
 - name: push-test-infra-yamllint
   always_run: true
