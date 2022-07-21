@@ -4,14 +4,8 @@ base_images:
     namespace: "openshift"
     tag: "3.8"
 tests:
-- as: verify
-  steps:
-    test:
-    - as: "test1"
-      from: python
-      commands: |
-        "print(it works!)"
-      resources:
-        requests:
-          cpu: 100m
-          memory: 100Mi
+- as: "test"
+  commands: "print('it works')"
+  container:
+    from: "python"
+    clone: false
