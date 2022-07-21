@@ -20,10 +20,9 @@ resources:
 
 ## here the tests start
 tests:
-- as: "test"
-  steps:
+- steps:
     test:
-    - as: "test"
+    - as: new-test
       commands: "print('it works')"
       resources:
         requests:
