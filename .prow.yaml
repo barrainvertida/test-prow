@@ -18,7 +18,7 @@ presubmits:
     containers:
     - args:
       - --config=test.yaml
-      - --git-ref=barrainvertida/test-prow
+      - --git-ref=barrainvertida/test-prow@test
       - --target=.
       command:
       - ci-operator
