@@ -2,9 +2,10 @@ tests:
 - as: verify
   steps:
     test:
-    - from: docker.io/library/busybox
+    - as: "test1"
+      from: "docker.io/library/busybox"
       commands: |
-        echo "it works!"
+        "echo it works!"
       resources:
         requests:
           cpu: 1000m
