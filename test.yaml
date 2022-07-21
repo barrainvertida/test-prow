@@ -22,10 +22,11 @@ resources:
 tests:
 - as: "test"
   steps:
-  - as: "test"
-    commands: "print('it works')"
-    container:
-      from_image:
-        namespace: "openshift"
-        name: "python"
-        tag: "3.8"
+    test:
+    - as: "test"
+      commands: "print('it works')"
+      container:
+        from_image:
+          namespace: "openshift"
+          name: "python"
+          tag: "3.8"
