@@ -31,7 +31,7 @@ tests:
   secrets:
   - mount_path: /var/run/secrets/kubernetes.io/serviceaccount/token
     name: my-token
-    namespace: test-credentials
+    #namespace: test-credentials
   literal_steps:
     allow_skip_on_success: true
     #cluster_profile: test
