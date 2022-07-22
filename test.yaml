@@ -35,7 +35,7 @@ tests:
 - as: foo
   literal_steps:
     allow_skip_on_success: true
-    cluster_profile: test
+    #cluster_profile: test
     pre: []
     test:
     - as: bar
