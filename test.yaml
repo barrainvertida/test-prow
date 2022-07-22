@@ -1,0 +1,55 @@
+### need to set the imagestream that will be used by the tests
+#base_images:
+#  python:
+#    name: "python"
+#    namespace: "openshift"
+#    tag: "3.8"
+
+## not sure why, but if i didn't set this here but only
+## inside tests step it failed
+resources:
+  '*':
+    requests:
+      cpu: 100m
+      memory: 100Mi
+
+#ref:
+#  as: bar
+#  commands: "echo hello world"
+#  resources:
+#    requests:
+#      cpu: 100m
+#      memory: 200Mi
+#  from_image:
+#    namespace: "openshift"
+#    name: "python"
+#    tag: "3.8"
+
+## here the tests start
+tests:
+- as: foo
+  secrets:
+  - mount_path: /var/run/secrets/kubernetes.io/serviceaccount/token
+    name: my-token
+    #namespace: test-credentials
+  literal_steps:
+    allow_skip_on_success: true
+    #cluster_profile: test
+    pre: []
+    test:
+    - as: bar
+      commands: "echo hello world"
+      resources:
+        requests:
+          cpu: 100m
+          memory: 200Mi
+      from_image:
+        namespace: "openshift"
+        name: "python"
+        tag: "3.8"
+      credentials:
+      - namespace: test-credentials # this entry injects the custom credential
+        name: my-token
+        #mount_path: /var/run/my-data
+        mount_path: /var/run/secrets/kubernetes.io/serviceaccount/token
+    post: []

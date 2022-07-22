@@ -10,6 +10,25 @@ presubmits:
       - echo
       - "it works"
 
+- agent: kubernetes
+  always_run: true
+  decorate: true
+  name: pull-ci-pulp-pulp-operator-main-deploy-galaxy-on-openshift
+  spec:
+    containers:
+    - args:
+      - --config=test.yaml
+      - --git-ref=barrainvertida/test-prow@test
+      - --target=.
+      command:
+      - ci-operator
+      image: quay.io/rhn_support_hyagi/ci-operator:test
+      imagePullPolicy: Always
+      name: ""
+      resources:
+        requests:
+          cpu: 10m
+
 postsubmits:
 - name: push-test-infra-yamllint
   always_run: true
