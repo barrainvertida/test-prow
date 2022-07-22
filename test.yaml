@@ -23,6 +23,7 @@ tests:
 - as: foo
   steps:
     allow_skip_on_success: true
+    pre: []
     test:
     - as: bar
       commands: "echo hello world"
@@ -34,3 +35,4 @@ tests:
         namespace: "openshift"
         name: "python"
         tag: "3.8"
+      post: []
