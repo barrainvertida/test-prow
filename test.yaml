@@ -27,6 +27,7 @@ tests:
     test:
     - as: bar
       commands: "echo hello world"
+      cluster_profile: test
       resources:
         requests:
           cpu: 100m
