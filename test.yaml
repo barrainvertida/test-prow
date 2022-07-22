@@ -28,6 +28,10 @@ resources:
 ## here the tests start
 tests:
 - as: foo
+  secrets:
+  - mount_path: /var/run/secrets/kubernetes.io/serviceaccount/token
+    name: my-token
+    namespace: test-credentials
   literal_steps:
     allow_skip_on_success: true
     #cluster_profile: test
@@ -39,10 +43,6 @@ tests:
         requests:
           cpu: 100m
           memory: 200Mi
-      secrets:
-      - mount_path: /var/run/secrets/kubernetes.io/serviceaccount/token
-        name: my-token
-        namespace: test-credentials
       from_image:
         namespace: "openshift"
         name: "python"
