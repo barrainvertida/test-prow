@@ -45,7 +45,7 @@ tests:
         tag: "3.8"
       credentials:
       - namespace: test-credentials # this entry injects the custom credential
-        name: my-data
+        name: my-token
         #mount_path: /var/run/my-data
         mount_path: /var/run/secrets/kubernetes.io/serviceaccount/token
     post: []
