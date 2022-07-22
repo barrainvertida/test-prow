@@ -21,19 +21,19 @@ resources:
 ## here the tests start
 tests:
 - as: foo
-  ref:
-    as: bar
-    commands: "echo hello world"
-    resources:
-      requests:
-        cpu: 100m
-        memory: 200Mi
-    from_image:
-      namespace: "openshift"
-      name: "python"
-      tag: "3.8"
   steps:
-    allow_skip_on_success: true
+    ref:
+      as: bar
+      commands: "echo hello world"
+      resources:
+        requests:
+          cpu: 100m
+          memory: 200Mi
+      from_image:
+        namespace: "openshift"
+        name: "python"
+        tag: "3.8"
+      allow_skip_on_success: true
     cluster_profile: test
     pre: []
     test:
