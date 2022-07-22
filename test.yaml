@@ -22,7 +22,8 @@ resources:
 tests:
 - as: foo
   steps:
-    workflow: "test"
+    workflow: test
+    allow_skip_on_success: true
     test:
     - as: bar
       commands: "echo hello world"
