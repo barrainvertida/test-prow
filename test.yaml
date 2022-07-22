@@ -31,6 +31,6 @@ tests:
           cpu: 100m
           memory: 200Mi
       from_image:
-        namespace: openshift
-        name: python
+        namespace: "openshift"
+        name: "python"
         tag: "3.8"
