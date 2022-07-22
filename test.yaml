@@ -23,11 +23,11 @@ tests:
 - as: foo
   steps:
     allow_skip_on_success: true
+    cluster_profile: test
     pre: []
     test:
     - as: bar
       commands: "echo hello world"
-      cluster_profile: test
       resources:
         requests:
           cpu: 100m
