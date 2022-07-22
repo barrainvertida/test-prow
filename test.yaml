@@ -13,11 +13,6 @@ resources:
       cpu: 100m
       memory: 100Mi
 
-credentials:
-- namespace: test-credentials # this entry injects the custom credential
-  name: my-data
-  mount_path: /var/run/my-data
-
 #ref:
 #  as: bar
 #  commands: "echo hello world"
@@ -48,4 +43,8 @@ tests:
         namespace: "openshift"
         name: "python"
         tag: "3.8"
+      credentials:
+      - namespace: test-credentials # this entry injects the custom credential
+        name: my-data
+        mount_path: /var/run/my-data
     post: []
