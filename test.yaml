@@ -35,4 +35,4 @@ tests:
         namespace: "openshift"
         name: "python"
         tag: "3.8"
-      post: []
+    post: []
