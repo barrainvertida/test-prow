@@ -18,6 +18,18 @@ resources:
 #  name: my-data
 #  mount_path: /var/run/my-data
 
+ref:
+  as: bar
+  commands: "echo hello world"
+  resources:
+    requests:
+      cpu: 100m
+      memory: 200Mi
+  from_image:
+    namespace: "openshift"
+    name: "python"
+    tag: "3.8"
+
 ## here the tests start
 tests:
 - as: foo
@@ -26,14 +38,5 @@ tests:
     cluster_profile: test
     pre: []
     test:
-    - as: bar
-      commands: "echo hello world"
-      resources:
-        requests:
-          cpu: 100m
-          memory: 200Mi
-      from_image:
-        namespace: "openshift"
-        name: "python"
-        tag: "3.8"
+    - ref: bar
     post: []
