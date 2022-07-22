@@ -22,10 +22,10 @@ resources:
 tests:
 - as: foo
   steps:
-    workflow: test
+    workflow: "test"
     test:
     - as: bar
-      commands: echo "hello world"
+      commands: "echo hello world"
       resources:
         requests:
           cpu: 100m
